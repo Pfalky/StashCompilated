@@ -29,7 +29,7 @@ public class MainPage {
 
     protected void initElements() throws IOException {
         PageFactory.initElements(getDriver(), this);
-    }
+    } //инициируем страницу от pagefactory
 
     @ActionTitle(name = "заполняет поле")
     public void fillsField(String field, String value) throws ClassNotFoundException, IllegalAccessException {

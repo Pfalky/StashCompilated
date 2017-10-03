@@ -7,13 +7,7 @@ import java.util.logging.Logger;
 
 public  class Helper {
     private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-
-    public static void testStashGen() {
-        Map<String, String> stash = new HashMap<String, String>();
-        stash.put(new String("Key1"), new String("Value1"));
-        stash.put(new String("Key2"), new String("Value2"));
-        stash.put(new String("Key3"), new String("Value3"));
-    }
+    //Stash stash = new Stash();
 
     public void preparationValue(HashMap stash) {
         LOGGER.info("Подготовливаем значения");
@@ -33,7 +27,7 @@ public  class Helper {
                         oldValue = getValueFromStash(stash);
                         break;
                     case 1:
-                        rule = parsedXlsBuilder.toString();
+              //          rule = parsedXlsBuilder.toString();
                         break;
                     case 2:
                         newKey = getKeyFromStash(stash);

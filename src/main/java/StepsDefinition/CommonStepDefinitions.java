@@ -79,6 +79,16 @@ public class CommonStepDefinitions {
         throw new AutotestError("Отсутсвует метод с указанным колличеством параметров. \n" +
                 "Имеется метод с колличеством параметров равным: " + 2);
     }
+/*
+    @When("^пользователь сохраняет значение <поля> в стеш") //добавить regex для слова "Поле"
+    public void saveToStash(Object stashKey, Object stashValue) throws InvocationTargetException, IllegalAccessException, InstantiationException {
+        Assert.assertTrue("Не найдено метода с заданным названием : \"" + actionName + "\"",
+                ReflectionHelper.getMethodsAnnotatedWith(Init, ActionTitle.class, actionName).size() != 0);
+        for (Method m : ReflectionHelper.getMethodsAnnotatedWith(Init, ActionTitle.class, actionName)) {
+            if (m.getParameterCount() == 2)
+                m.invoke(Init.newInstance(), param, param2);
+            return;
+        }*/
 
 
     @Then("^Скачать проект построчно$")

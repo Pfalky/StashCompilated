@@ -4,14 +4,14 @@ import Common.Annotations.PageTitle;
 import Common.Annotations.Title;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
+
 import java.util.logging.Logger;
 
 import static Common.DriverPage.getDriver;
@@ -34,14 +34,12 @@ public class YandexSearchPage extends MainPage {
         PageFactory.initElements(getDriver(), this);
     }
 
-
-
     @FindBy(xpath = "//a[@data-statlog='news.news.links.1.main']")
 
     @Title("Первая новость на странице")
     private List<WebElement> firstNews;
 
-    //firstNews.saveToStash();
+  //  stash.saveToStash(WebElement, firstNews);
 
 
 }
