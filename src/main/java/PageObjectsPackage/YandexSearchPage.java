@@ -3,6 +3,7 @@ package PageObjectsPackage;
 import Common.Annotations.ActionTitle;
 import Common.Annotations.PageTitle;
 import Common.Annotations.Title;
+import cucumber.api.DataTable;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import static Common.DriverPage.getDriver;
+import static StepsDefinition.CommonStepDefinitions.makeValues;
 
 @PageTitle(name = "Страница поиска")
 
@@ -43,6 +45,8 @@ public class YandexSearchPage extends MainPage {
     @Title("Поле для ввода")
     private WebElement textInputField;
 
-    @ActionTitle("Пользователь подготовавливает значения")
-
+  /*  @ActionTitle(name = "Пользователь подготовавливает значения")
+    public void yandexPageFirstNewsSearch(){
+        makeValues(DataTable);
+    }*/
 }

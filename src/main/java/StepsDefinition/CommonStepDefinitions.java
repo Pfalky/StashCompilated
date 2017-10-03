@@ -82,8 +82,8 @@ public class CommonStepDefinitions {
                 "Имеется метод с колличеством параметров равным: " + 2);
     }
 
-    @When("^Пользователь подготовавливает значения") //добавить regex для слова "Поле"
-    public void makeValues(DataTable data) throws InvocationTargetException, IllegalAccessException, InstantiationException {
+    @When("^Пользователь подготовавливает значения")
+    public static void makeValues(DataTable data) throws InvocationTargetException, IllegalAccessException, InstantiationException {
         System.out.println("Подготовливаем значения");
         data.asLists(String.class).stream()
                 //Фильтруем "Комментарии" можно расширить своими
