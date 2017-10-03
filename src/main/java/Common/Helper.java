@@ -1,3 +1,4 @@
+/*
 package Common;
 
 
@@ -7,7 +8,7 @@ import java.util.logging.Logger;
 
 public  class Helper {
     private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    //Stash stash = new Stash();
+
 
     public void preparationValue(HashMap stash) {
         LOGGER.info("Подготовливаем значения");
@@ -78,3 +79,4 @@ public  class Helper {
     }
 
     }
+*/

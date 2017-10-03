@@ -1,5 +1,6 @@
 package PageObjectsPackage;
 
+import Common.Annotations.ActionTitle;
 import Common.Annotations.PageTitle;
 import Common.Annotations.Title;
 import org.openqa.selenium.WebDriver;
@@ -35,11 +36,13 @@ public class YandexSearchPage extends MainPage {
     }
 
     @FindBy(xpath = "//a[@data-statlog='news.news.links.1.main']")
-
     @Title("Первая новость на странице")
     private List<WebElement> firstNews;
 
-  //  stash.saveToStash(WebElement, firstNews);
+    @FindBy(xpath = "//input[@id=\"text\"]")
+    @Title("Поле для ввода")
+    private WebElement textInputField;
 
+    @ActionTitle("Пользователь подготовавливает значения")
 
 }
