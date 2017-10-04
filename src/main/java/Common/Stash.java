@@ -11,8 +11,14 @@ public class Stash {
         stash.put(key, value);
     }
 
-    public static Object getValueFromStash(Object value) {
-        return stash.get(value);
+    public static void addValueToStash(Map<String, String> map) {
+        map.forEach((key,value)-> {
+            stash.put(key,value);
+        });
+    }
+
+    public static Object getValueFromStash(String key) {
+        return stash.get(key);
     }
 
 }

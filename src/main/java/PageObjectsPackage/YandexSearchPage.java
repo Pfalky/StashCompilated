@@ -42,11 +42,10 @@ public class YandexSearchPage extends MainPage {
     private List<WebElement> firstNews;
 
     @FindBy(xpath = "//input[@id=\"text\"]")
-    @Title("Поле для ввода")
-    private WebElement textInputField;
+    @Title("Поисковая строка")
+    private WebElement search;
 
-  /*  @ActionTitle(name = "Пользователь подготовавливает значения")
-    public void yandexPageFirstNewsSearch(){
-        makeValues(DataTable);
-    }*/
-}
+    @Title("Текст первой строки с новостью на странице")
+    private String firstNewsTextValue;
+
+     }

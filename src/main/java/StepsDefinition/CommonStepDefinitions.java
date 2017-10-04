@@ -4,18 +4,20 @@ package StepsDefinition;
         import Common.Annotations.PageTitle;
         import Common.AutotestError;
         import Common.ReflectionHelper;
+        import Common.Stash;
         import com.gargoylesoftware.htmlunit.Page;
         import cucumber.api.DataTable;
         import cucumber.api.java.en.Given;
         import cucumber.api.java.en.When;
         import org.junit.Assert;
         import org.reflections.Reflections;
+        import sun.applet.resources.MsgAppletViewer;
 
         import java.io.IOException;
         import java.lang.reflect.Constructor;
         import java.lang.reflect.InvocationTargetException;
         import java.lang.reflect.Method;
-        import java.util.Set;
+        import java.util.*;
         import java.util.regex.Matcher;
         import java.util.regex.Pattern;
 
@@ -23,6 +25,7 @@ package StepsDefinition;
         import static Common.Props.getProps;
         import static Common.Stash.addValueToStash;
         import static Common.Stash.getValueFromStash;
+        import static net.sourceforge.htmlunit.cyberneko.HTMLEntities.get;
 
 
 /**
@@ -160,10 +163,34 @@ public class CommonStepDefinitions {
                         case "GET"://метод получения данных из стеша в переменную
                             System.out.println("Вывод значений из стеша");
                             break;
+                        case "REPLACE"://ruleArgs: заменяемые_символы которыми_заменяем (если второй аргумент отсутствует -> заменяем "")
+                            String[] oldNewChar = ruleArg.split(" ");
+                            newValue = oldValue.replaceAll(oldNewChar[0],
+                                    oldNewChar.length == 1 ? "" : oldNewChar[1]);
+                            break;
+
+                        default:
+                            System.out.println("Указанное правило '" + rule + "' еще не реализовано!");
+                            throw new AutotestError("Указанное правило '" + rule + "' еще не реализовано!");
+
                     }
                     addValueToStash(newKey, newValue);
 
                 });
     }
-}
 
+    @When("^Пользователь сохраняет значение элемента в стеш")
+    public static void safeToStash(DataTable dataTable){
+        Map<String,String> hashMap = new HashMap<>();
+        dataTable.asMap(String.class, String.class).forEach((key,value)->{hashMap.put(key,value);
+        });
+        addValueToStash(hashMap);
+        System.out.println("Сохранение значений в стеш");
+        System.out.println(hashMap);
+    }
+
+    @When("Пользователь заполняет поле")
+    public static void userFillField(){
+
+    }
+}
